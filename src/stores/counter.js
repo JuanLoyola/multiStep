@@ -5,7 +5,7 @@ export const useButtonStore = defineStore('buttons', () => {
   	const currentStep = ref(1)
 
   	function increment() {
-  	  currentStep.value++
+		currentStep.value++
   	}
 
 	function decrement() {
