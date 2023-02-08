@@ -14,6 +14,5 @@
 import {useButtonStore} from '../stores/counter'
 
 const storeButtons = useButtonStore()
-console.log(storeButtons.currentStep)
 
 </script>
