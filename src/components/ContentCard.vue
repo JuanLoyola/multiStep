@@ -37,6 +37,19 @@
             <p class="my-5 xl:font-medium text-gray-400 xl:text-lg text-left">
                 Add-ons help enhance your gaming experience.
             </p>
+            <section id="plan" class="w-full max-w-md flex flex-col gap-y-5 justify-center items-center">
+                <button
+                    :class="item.checked == false ? 'border-gray-300' : 'border-indigo-500'"
+                    class="w-full bg-white hover:bg-gray-100 h-20 shadow max-w-sm border   rounded-md flex justify-start items-center text-left"
+                    v-for="item in addOns" :key="item"
+                >
+                    <input type="checkbox" :checked="item.checked" :name="item.title" class="h-4 w-4 ml-5">
+                    <div class="ml-5 flex flex-col justify-start items-start">
+                        <h3 class="font-bold">{{item.title}}</h3>
+                        <p class="font-light">{{item.info}}</p>
+                    </div>
+                </button>
+            </section>
         </div>
 
 
@@ -77,12 +90,30 @@
                     price: '$15/mo'
                 }
             ]
+            const addOns = [
+                {
+                    checked: true,
+                    title: 'Online service',
+                    info: 'Access to multiplayer games'
+                },
+                {
+                    checked: true,
+                    title: 'Larger storage',
+                    info: 'Extra 1 TB of cloud save'
+                },
+                {
+                    checked: false,
+                    title: 'Customizable profile',
+                    info: 'Custom theme on your profile'
+                }
+            ]
 
             onMounted(() => storeButtons);
 
             return {
                 storeButtons,
-                plan
+                plan,
+                addOns
             }
         },
 
