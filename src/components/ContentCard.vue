@@ -21,13 +21,13 @@
                 You have multiples options here
             </p>
             <section id="plan" class="w-full max-w-md flex flex-col gap-y-5 justify-center items-center">
-                <div class="w-full max-w-sm border border-indigo-500 flex justify-start items-center text-left" v-for="plan in plan" :key="plan">
+                <button class="w-full bg-white hover:bg-gray-100 active:bg-gray-100 focus:bg-gray-100 h-20 shadow max-w-sm border border-gray-300 focus:border-indigo-500 rounded-md flex justify-start items-center text-left" v-for="plan in plan" :key="plan">
                     <img :src="plan.img" :alt="plan.title">
                     <div class="ml-5 flex flex-col justify-start items-start">
                         <h3 class="font-bold">{{plan.title}}</h3>
                         <p class="font-light">{{plan.price}}</p>
                     </div>
-                </div>
+                </button>
             </section>
         </div>
 
