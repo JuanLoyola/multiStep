@@ -56,8 +56,21 @@
             <p class="my-5 xl:font-medium text-gray-400 xl:text-lg text-left">
                 Double-check everything looks OK before confirming.
             </p>
-            <section>
-                <p class="font-bold">Name: {{storeButtons.result}}</p>
+            <section class="w-full max-w-xs text-left">
+                <div class="flex justify-start items-center">
+                    <p class="font-bold w-[4em]">Name:</p>
+                    <span class="min-w-[8em] text-center font-light bg-gray-200 py-2 px-4">{{storeButtons.result.name}}</span>
+                </div>
+
+                <div class="flex justify-start items-center my-3">
+                    <p class="font-bold w-[4em]">Email:</p>
+                    <span class="min-w-[8em]  text-center font-light bg-gray-200 py-2 px-4">{{storeButtons.result.email}}</span>
+                </div>
+
+                <div class="flex justify-start items-center">
+                    <p class="font-bold w-[4em]">Phone:</p>
+                    <span class="min-w-[8em]  text-center font-light bg-gray-200 py-2 px-4">{{storeButtons.result.phone}}</span>
+                </div>
             </section>
         </div>
     </div>
