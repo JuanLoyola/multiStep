@@ -24,7 +24,7 @@
                     v-for="plan in plan" :key="plan"
                     class="w-full bg-white hover:bg-gray-100 active:bg-gray-100 focus:bg-gray-100 h-20 shadow max-w-sm border border-gray-300 focus:border-indigo-500 rounded-md flex justify-start items-center text-left"
                 >
-                    <img class="pl-5" :src="`/src/assets/images/${plan.img}`" :alt="plan.title">
+                    <img class="pl-5" :src="plan.img" :alt="plan.title">
                     <div class="ml-5 flex flex-col justify-start items-start">
                         <h3 class="font-bold">{{plan.title}}</h3>
                         <p class="font-light">{{plan.price}}</p>
@@ -102,17 +102,17 @@
 
             const plan = [
                 {
-                    img: 'icon-arcade.svg',
+                    img: 'https://i.imgur.com/UkWi0EZ.png',
                     title: 'Arcade',
                     price: '$9/mo'
                 },
                 {
-                    img: 'icon-advanced.svg',
+                    img: 'https://i.imgur.com/42PnuU9.png',
                     title: 'Advanced',
                     price: '$12/mo'
                 },
                 {
-                    img: 'icon-pro.svg',
+                    img: 'https://i.imgur.com/V4uMIdR.png',
                     title: 'Pro',
                     price: '$15/mo'
                 }
