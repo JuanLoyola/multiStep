@@ -1,6 +1,6 @@
 <template>
     <div class="w-full flex justify-center items-center">
-        <div v-if="storeButtons.currentStep == 1" class="w-full h-[29em] max-w-md flex flex-col justify-center items-start bg-white p-6 rounded-md z-20">
+        <div v-if="storeButtons.currentStep == 1" class="w-full h-[29em] max-w-md lg:max-w-lg flex flex-col justify-center items-start bg-white p-6 rounded-br-md rounded-tr-md z-20">
             <!-- TODO: translate i18n -->
             <h1 class="font-bold text-2xl text-left w-full">Personal Info</h1>
             <p class="my-5 xl:font-medium text-gray-400 xl:text-lg text-left">
@@ -13,7 +13,7 @@
             </section>
         </div>
 
-        <div v-if="storeButtons.currentStep == 2" class="w-full h-[29em] max-w-md flex flex-col justify-center items-start bg-white p-6 rounded-md z-20">
+        <div v-if="storeButtons.currentStep == 2" class="w-full h-[29em] max-w-md lg:max-w-lg flex flex-col justify-center items-start bg-white p-6 rounded-br-md rounded-tr-md z-20">
             <h1 class="font-bold text-2xl text-left w-full">Select your plan</h1>
             <p class="my-5 xl:font-medium text-gray-400 xl:text-lg text-left">
                 You have multiples options here
@@ -33,7 +33,7 @@
             </section>
         </div>
 
-        <div v-if="storeButtons.currentStep == 3" class="w-full h-[29em] max-w-md flex flex-col justify-center items-start bg-white p-6 rounded-md z-20">
+        <div v-if="storeButtons.currentStep == 3" class="w-full h-[29em] max-w-md lg:max-w-lg flex flex-col justify-center items-start bg-white p-6 rounded-br-md rounded-tr-md z-20">
             <h1 class="font-bold text-2xl text-left w-full">Pick add-ons</h1>
             <p class="my-5 xl:font-medium text-gray-400 xl:text-lg text-left">
                 Add-ons help enhance your gaming experience.
@@ -53,7 +53,7 @@
             </section>
         </div>
 
-        <div v-if="storeButtons.currentStep == 4" class="w-full h-[29em] max-w-md flex flex-col justify-center items-start bg-white p-6 rounded-md z-20">
+        <div v-if="storeButtons.currentStep == 4" class="w-full h-[29em] max-w-md lg:max-w-lg flex flex-col justify-center items-start bg-white p-6 rounded-br-md rounded-tr-md z-20">
             <h1 class="font-bold text-2xl text-left w-full">Finishing up</h1>
             <p class="my-5 xl:font-medium text-gray-400 xl:text-lg text-left">
                 Double-check everything looks OK before confirming.

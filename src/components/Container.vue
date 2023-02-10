@@ -1,9 +1,11 @@
 <template>
     <div class="w-full flex justify-center items-center h-[90vh]">
-        <div class="w-full md:max-w-lg md:bg-black md:bg-opacity-10 rounded-md flex flex-col justify-center items-center">
+        <div class="w-full flex flex-col lg:max-w-5xl md:bg-black md:bg-opacity-10 rounded-md lg:p-20 lg:flex-row ">
             <Header />
-            <ContentCard />
-            <Footer />
+            <div class="w-full flex flex-col">
+                <ContentCard />
+                <Footer />
+            </div>
         </div>
     </div>
 </template>

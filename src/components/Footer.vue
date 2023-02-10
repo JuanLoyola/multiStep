@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full max-w-md mt-8  flex items-center h-20" :class="storeButtons.currentStep > 1 ? 'justify-between' : 'justify-end'">
+    <div class="w-full mt-8 flex justify-center items-center h-20" :class="storeButtons.currentStep > 1 ? 'justify-between' : 'justify-end'">
         <button
 			id="go-back"
 			v-if="storeButtons.currentStep > 1"
