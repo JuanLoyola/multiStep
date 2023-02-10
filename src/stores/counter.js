@@ -5,17 +5,21 @@ export const useButtonStore = defineStore('buttons', () => {
   	const currentStep = ref(1)
 
 	const result = {
-		name: '',
+		// form
+		name: ref(''),
 		email: ref(''),
 		phone: ref(''),
-		arcade: ref(false),
-		advanced: ref(false),
-		pro: ref(false),
+
+		// plan
+		plan: ref(''),
+
+		// add-ons
 		online: ref(true),
-		largerStorage: ref(true),
+		storage: ref(true),
 		custom: ref(false),
 	}
 
+	// steps counter
   	function increment() {
 		currentStep.value++
   	}

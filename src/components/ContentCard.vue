@@ -19,7 +19,11 @@
                 You have multiples options here
             </p>
             <section id="plan" class="w-full max-w-md flex flex-col gap-y-5 justify-center items-center">
-                <button class="w-full bg-white hover:bg-gray-100 active:bg-gray-100 focus:bg-gray-100 h-20 shadow max-w-sm border border-gray-300 focus:border-indigo-500 rounded-md flex justify-start items-center text-left" v-for="plan in plan" :key="plan">
+                <button
+                    @click="planSelected(plan)"
+                    v-for="plan in plan" :key="plan"
+                    class="w-full bg-white hover:bg-gray-100 active:bg-gray-100 focus:bg-gray-100 h-20 shadow max-w-sm border border-gray-300 focus:border-indigo-500 rounded-md flex justify-start items-center text-left"
+                >
                     <img :src="plan.img" :alt="plan.title">
                     <div class="ml-5 flex flex-col justify-start items-start">
                         <h3 class="font-bold">{{plan.title}}</h3>
@@ -29,7 +33,6 @@
             </section>
         </div>
 
-
         <div v-if="storeButtons.currentStep == 3" class="w-full h-[29em] max-w-md flex flex-col justify-center items-start bg-white p-6 rounded-md z-20">
             <h1 class="font-bold text-2xl text-left w-full">Pick add-ons</h1>
             <p class="my-5 xl:font-medium text-gray-400 xl:text-lg text-left">
@@ -38,10 +41,10 @@
             <section id="plan" class="w-full max-w-md flex flex-col gap-y-5 justify-center items-center">
                 <button
                     :class="item.checked == false ? 'border-gray-300' : 'border-indigo-500'"
-                    class="w-full bg-white hover:bg-gray-100 h-20 shadow max-w-sm border   rounded-md flex justify-start items-center text-left"
+                    class="w-full bg-white hover:bg-gray-100 h-20 shadow max-w-sm border   rounded-md flex justify-start items-center text-left cursor-not-allowed"
                     v-for="item in addOns" :key="item"
                 >
-                    <input type="checkbox" :checked="item.checked" :name="item.title" class="h-4 w-4 ml-5">
+                    <input disabled type="checkbox" :checked="item.checked" :name="item.title" class="h-4 w-4 ml-5 cursor-not-allowed">
                     <div class="ml-5 flex flex-col justify-start items-start">
                         <h3 class="font-bold">{{item.title}}</h3>
                         <p class="font-light">{{item.info}}</p>
@@ -50,7 +53,6 @@
             </section>
         </div>
 
-
         <div v-if="storeButtons.currentStep == 4" class="w-full h-[29em] max-w-md flex flex-col justify-center items-start bg-white p-6 rounded-md z-20">
             <h1 class="font-bold text-2xl text-left w-full">Finishing up</h1>
             <p class="my-5 xl:font-medium text-gray-400 xl:text-lg text-left">
@@ -58,18 +60,28 @@
             </p>
             <section class="w-full max-w-xs text-left">
                 <div class="flex justify-start items-center">
-                    <p class="font-bold w-[4em]">Name:</p>
-                    <span class="min-w-[8em] text-center font-light bg-gray-200 py-2 px-4">{{storeButtons.result.name}}</span>
+                    <p class="font-bold w-[5em]">Name:</p>
+                    <span class="min-w-[8em] text-center text-sm capitalize font-light bg-gray-200 py-2 px-4">{{storeButtons.result.name}}</span>
                 </div>
 
                 <div class="flex justify-start items-center my-3">
-                    <p class="font-bold w-[4em]">Email:</p>
-                    <span class="min-w-[8em]  text-center font-light bg-gray-200 py-2 px-4">{{storeButtons.result.email}}</span>
+                    <p class="font-bold w-[5em]">Email:</p>
+                    <span class="min-w-[8em] text-center text-sm capitalize font-light bg-gray-200 py-2 px-4">{{storeButtons.result.email}}</span>
                 </div>
 
                 <div class="flex justify-start items-center">
-                    <p class="font-bold w-[4em]">Phone:</p>
-                    <span class="min-w-[8em]  text-center font-light bg-gray-200 py-2 px-4">{{storeButtons.result.phone}}</span>
+                    <p class="font-bold w-[5em]">Phone:</p>
+                    <span class="min-w-[8em] text-center text-sm capitalize font-light bg-gray-200 py-2 px-4">{{storeButtons.result.phone}}</span>
+                </div>
+
+                <div class="flex justify-start items-center my-3">
+                    <p class="font-bold w-[5em]">Plan:</p>
+                    <span class="min-w-[8em] text-center text-sm capitalize font-light bg-gray-200 py-2 px-4">{{storeButtons.result.plan}}</span>
+                </div>
+
+                <div class="flex justify-start items-center my-3">
+                    <p class="font-bold w-[5em]">Add-ons:</p>
+                    <span class="min-w-[8em] text-center text-sm capitalize font-light bg-gray-200 py-2 px-4">Online Services & Larger Storage</span>
                 </div>
             </section>
         </div>
@@ -87,6 +99,7 @@
 
         setup() {
             const storeButtons = useButtonStore()
+
             const plan = [
                 {
                     img: '../assets/images/icon-arcade.svg',
@@ -104,6 +117,11 @@
                     price: '$15/mo'
                 }
             ]
+
+            function planSelected(plan) {
+                storeButtons.result.plan = plan.title
+            }
+
             const addOns = [
                 {
                     checked: true,
@@ -127,7 +145,8 @@
             return {
                 storeButtons,
                 plan,
-                addOns
+                addOns,
+                planSelected
             }
         },
 
