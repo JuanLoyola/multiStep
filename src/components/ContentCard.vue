@@ -46,7 +46,7 @@
                 >
                     <input disabled type="checkbox" :checked="item.checked" :name="item.title" class="h-4 w-4 ml-5 cursor-not-allowed">
                     <div class="ml-5 flex flex-col justify-start items-start">
-                        <h3 class="font-bold">{{item.title}}</h3>
+                        <h3 class="font-bold text-blue-600">{{item.title}}</h3>
                         <p class="font-light">{{item.info}}</p>
                     </div>
                 </button>
@@ -61,27 +61,27 @@
             <section class="w-full max-w-xs text-left">
                 <div class="flex justify-start items-center">
                     <p class="font-bold w-[5em]">Name:</p>
-                    <span class="min-w-[8em] text-center text-sm capitalize font-light bg-gray-200 py-2 px-4">{{storeButtons.result.name}}</span>
+                    <span class="min-w-[8em] text-center text-sm capitalize font-medium rounded-md text-blue-800 bg-blue-200 py-2 px-4">{{storeButtons.result.name}}</span>
                 </div>
 
                 <div class="flex justify-start items-center my-3">
                     <p class="font-bold w-[5em]">Email:</p>
-                    <span class="min-w-[8em] text-center text-sm capitalize font-light bg-gray-200 py-2 px-4">{{storeButtons.result.email}}</span>
+                    <span class="min-w-[8em] text-center text-sm capitalize font-medium rounded-md text-blue-800 bg-blue-200 py-2 px-4">{{storeButtons.result.email}}</span>
                 </div>
 
                 <div class="flex justify-start items-center">
                     <p class="font-bold w-[5em]">Phone:</p>
-                    <span class="min-w-[8em] text-center text-sm capitalize font-light bg-gray-200 py-2 px-4">{{storeButtons.result.phone}}</span>
+                    <span class="min-w-[8em] text-center text-sm capitalize font-medium rounded-md text-blue-800 bg-blue-200 py-2 px-4">{{storeButtons.result.phone}}</span>
                 </div>
 
                 <div class="flex justify-start items-center my-3">
                     <p class="font-bold w-[5em]">Plan:</p>
-                    <span class="min-w-[8em] text-center text-sm capitalize font-light bg-gray-200 py-2 px-4">{{storeButtons.result.plan}}</span>
+                    <span class="min-w-[8em] text-center text-sm capitalize font-medium rounded-md text-blue-800 bg-blue-200 py-2 px-4">{{storeButtons.result.plan}}</span>
                 </div>
 
                 <div class="flex justify-start items-center my-3">
                     <p class="font-bold w-[5em]">Add-ons:</p>
-                    <span class="min-w-[8em] text-center text-sm capitalize font-light bg-gray-200 py-2 px-4">Online Services & Larger Storage</span>
+                    <span class="min-w-[8em] text-center text-sm capitalize font-medium rounded-md text-blue-800 bg-blue-200 py-2 px-4">Online Services & Larger Storage</span>
                 </div>
             </section>
         </div>
