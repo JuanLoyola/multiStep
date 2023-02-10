@@ -4,6 +4,18 @@ import { defineStore } from 'pinia'
 export const useButtonStore = defineStore('buttons', () => {
   	const currentStep = ref(1)
 
+	const result = {
+		name: '',
+		email: ref(''),
+		phone: ref(''),
+		arcade: ref(false),
+		advanced: ref(false),
+		pro: ref(false),
+		online: ref(true),
+		largerStorage: ref(true),
+		custom: ref(false),
+	}
+
   	function increment() {
 		currentStep.value++
   	}
@@ -12,22 +24,5 @@ export const useButtonStore = defineStore('buttons', () => {
 		currentStep.value--
 	}
 
-  	return { currentStep, increment, decrement }
+  	return { currentStep, increment, decrement, result }
 })
-// import { defineStore } from 'pinia'
-
-// export const useButtonStore = defineStore({
-//     id: 'buttons',
-//     state: () => {
-//         currentStep: 1
-//     },
-
-//     actions: {
-//         nextStep() {
-//             this.currentStep++
-//         },
-//         backStep() {
-//             if(this.currentStep > 1) this.currentStep--
-//         }
-//     }
-// })

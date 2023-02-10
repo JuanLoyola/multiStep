@@ -9,9 +9,7 @@
 
             <!-- inputs section -->
             <section class="w-full">
-                <Input :label="'Name'" :placeholder="'e.g Stephen King'" />
-                <Input :label="'Email address'" :placeholder="'e.g theking@gmail.com'" />
-                <Input :label="'Phone number'" :placeholder="'e.g +1 234 567 890'" />
+                <Inputs />
             </section>
         </div>
 
@@ -58,6 +56,9 @@
             <p class="my-5 xl:font-medium text-gray-400 xl:text-lg text-left">
                 Double-check everything looks OK before confirming.
             </p>
+            <section>
+                <p class="font-bold">Name: {{storeButtons.result}}</p>
+            </section>
         </div>
     </div>
 </template>
@@ -66,7 +67,7 @@
 <script>
     import { onMounted } from "vue";
     import {useButtonStore} from '../stores/counter'
-    import Input from '../components/Input.vue';
+    import Inputs from '../components/Input.vue';
 
     export default {
         name: 'ContentCard',
@@ -118,7 +119,7 @@
         },
 
         components: {
-            Input
+            Inputs
         }
     }
 </script>
