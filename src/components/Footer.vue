@@ -12,7 +12,7 @@
         <button
 			id="go-next"
 			v-if="storeButtons.currentStep != 4"
-			@click="storeButtons.increment"
+			@click="storeButtons.nextStep()"
 			class="text-white bg-indigo-600 hover:bg-indigo-700 cursor-pointer px-5 py-2 rounded-md transition-all poin"
 		>
 			Next Step
